@@ -29,7 +29,6 @@ export default function WithSubnavigation() {
   return (
     <Box>
       <Flex
-        // bg={useColorModeValue("white", "gray.800")}
         bg='pink-light'
         color={useColorModeValue("gray.600", "white")}
         minH={"60px"}
@@ -68,36 +67,6 @@ export default function WithSubnavigation() {
             <DesktopNav />
           </Flex>
         </Flex>
-
-        {/* <Stack
-          flex={{ base: 1, md: 0 }}
-          justify={"flex-end"}
-          direction={"row"}
-          spacing={6}
-        >
-          <Button
-            as={"a"}
-            fontSize={"sm"}
-            fontWeight={400}
-            variant={"link"}
-            href={"#"}
-          >
-            Sign In
-          </Button>
-          <Button
-            display={{ base: "none", md: "inline-flex" }}
-            fontSize={"sm"}
-            fontWeight={600}
-            color={"white"}
-            bg={"pink.400"}
-            href={"#"}
-            _hover={{
-              bg: "pink.300",
-            }}
-          >
-            Sign Up
-          </Button>
-        </Stack> */}
       </Flex>
 
       <Collapse in={isOpen} animateOpacity>
@@ -116,42 +85,33 @@ const DesktopNav = () => {
     <Stack direction={"row"} spacing={4}>
       {NAV_ITEMS.map((navItem) => (
         <Box key={navItem.label}>
-          <Popover trigger={"hover"} placement={"bottom-start"}>
-            <PopoverTrigger>
-              <Link
-                p={2}
-                href={navItem.href ?? "#"}
-                fontSize={"sm"}
-                fontWeight={500}
-                color={linkColor}
-                _hover={{
-                  textDecoration: "none",
-                  color: linkHoverColor,
-                }}
-              >
-                {navItem.label}
-              </Link>
-            </PopoverTrigger>
-
-            {navItem.children && (
-              <PopoverContent
-                border={0}
-                boxShadow={"xl"}
-                bg={popoverContentBgColor}
-                p={4}
-                rounded={"xl"}
-                minW={"sm"}
-              >
-                <Stack>
-                  {navItem.children.map((child) => (
-                    <DesktopSubNav key={child.label} {...child} />
-                  ))}
-                </Stack>
-              </PopoverContent>
-            )}
-          </Popover>
+          <Link
+            p={2}
+            href={navItem.href ?? "#"}
+            fontSize={"sm"}
+            fontWeight={500}
+            color={linkColor}
+            _hover={{
+              textDecoration: "none",
+              color: linkHoverColor,
+            }}
+          >
+            {navItem.label}
+          </Link>
         </Box>
       ))}
+      <Button
+        display={{ base: "none", md: "inline-flex" }}
+        fontSize={"sm"}
+        fontWeight={600}
+        color={"white"}
+        bg={"pink.400"}
+        _hover={{
+          bg: "pink.300",
+        }}
+      >
+        Sign Up
+      </Button>
     </Stack>
   );
 };
