@@ -178,8 +178,4 @@ const NAV_ITEMS: Array<NavItem> = [
     label: "Podcasts",
     href: "podcasts",
   },
-  {
-    label: "Contact",
-    href: "contact",
-  },
 ];

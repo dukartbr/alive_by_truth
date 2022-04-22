@@ -1,5 +1,8 @@
 import {
+  Box,
+  Button,
   Flex,
+  Input,
   Modal,
   ModalOverlay,
   ModalContent,
@@ -30,11 +33,21 @@ function NewsletterBanner() {
 
       <Modal isOpen={isOpen} onClose={onClose}>
         <ModalOverlay />
-        <ModalContent>
-          <ModalHeader>Modal Title</ModalHeader>
+        <ModalContent bg='pink-light'>
+          <ModalHeader>Join Our Club!</ModalHeader>
           <ModalCloseButton />
-          <ModalBody>
-            <pre>Hello World</pre>
+          <ModalBody alignContent='center'>
+            <Text>
+              Nullam vitae tincidunt magna. Morbi ante ante, tempus ultricies
+              hendrerit quis, aliquam sit amet felis. Morbi iaculis rhoncus nunc
+              blandit pulvinar.
+            </Text>
+            <Box mt={6} textAlign='center'>
+              <Input bg='tan-light' placeholder='enter your email address' />
+              <Button bg='pink-dark' my={4} color='white'>
+                Submit
+              </Button>
+            </Box>
           </ModalBody>
         </ModalContent>
       </Modal>

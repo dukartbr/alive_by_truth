@@ -13,9 +13,9 @@ function MyApp({ Component, pageProps }: AppProps) {
         <Box bg='tan-light' w='100%'>
           <NewsletterBanner />
           <Header />
-          <Container h='100vh' py='2rem'>
+          <Box h='100vh'>
             <Component {...pageProps} />
-          </Container>
+          </Box>
           <Footer />
         </Box>
       </ChakraProvider>
